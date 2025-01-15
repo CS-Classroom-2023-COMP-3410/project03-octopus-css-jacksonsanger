@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>The Fascinating World of Octopuses</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -17,14 +18,17 @@
     <div id="main-content">
 
         <!-- Introduction -->
-        <h2>Introduction</h2>
-        <p>
+        <!-- added id to h2 here to add underline and style this header -->
+        <h2 id="intro">Introduction</h2>
+        <!-- added id to p here to easily add extra spacing to this element -->
+        <p id="intro-p">
             Octopuses are among the most fascinating creatures in the ocean.
             They are known for their intelligence and remarkable adaptability.
         </p>
 
         <!-- Amazing Facts -->
-        <h3>Amazing Facts</h3>
+        <!-- added id to h3 here to capitalize this one-->
+        <h3 id="amazing">Amazing Facts</h3>
         <!-- Unordered list -->
         <ul>
             <li>They have three hearts.</li>
@@ -34,7 +38,8 @@
 
         <!-- Anatomy -->
         <h4>Anatomy</h4>
-        <p>
+        <!-- added id to p here to align this paragraph with the lists -->
+        <p id="anatomy-p">
             An octopus's anatomy is as unique as it is fascinating.
             The <span class="important">mantle</span>, for example, helps in respiration and jet propulsion.
         </p>
@@ -49,8 +54,9 @@
         </ol>
 
         <!-- External Resources -->
-        <h6>External Resources</h6>
-        <p>
+        <h6>External Resources </h6>
+        <!-- added id to p here to change color-->
+        <p id="website-p">
             For more information, visit these websites:
             <a href="https://www.oceana.org/" target="_blank">Oceana</a> |
             <a href="https://www.nationalgeographic.com/" target="_blank">National Geographic</a>
@@ -63,7 +69,8 @@
             <img src="octopus-image.png" alt="Image of an octopus" width="100">
 
             <h2>Octopus Quiz</h2>
-            <form action="/submit-quiz" method="POST">
+            <!-- give id to the form for css targeting-->
+            <form id="quiz-sub-form" action="/submit-quiz" method="POST">
                 <!-- Question 1 -->
                 <label for="question1">How many hearts does an octopus have?</label>
                 <input type="text" id="question1" name="question1"><br>
@@ -87,12 +94,12 @@
                 <th>Location</th>
                 <th>Size</th>
             </tr>
-            <tr>
+            <tr id="row1">
                 <td>Common Octopus</td>
                 <td>Worldwide</td>
                 <td>12-36 inches</td>
             </tr>
-            <tr>
+            <tr id="row2">
                 <td>Giant Pacific Octopus</td>
                 <td>North Pacific</td>
                 <td>Up to 16 feet</td>

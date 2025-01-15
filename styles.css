@@ -1,0 +1,289 @@
+/*
+    SHORTHAND RULES FOR SPACING PROPERTIES (padding, margin, border)
+    1. If you specify only one value, it applies to all sides.
+    2. If you specify two values, the first value applies to the top and bottom, and the second value applies to the left and right.
+    3. If you specify three values, the first value applies to the top, the second value applies to the left and right, and the third value applies to the bottom.
+    4. If you specify four values, they apply to the top, right, bottom, and left in that order.
+*/
+
+
+/* All text is this font and we want to set bg color of the whole page here */
+body {
+    font-family: 'Arial', sans-serif; /* Use Arial font for the entire page */
+    background-color: rgb(209, 239, 247); /* Light gray background color */
+}
+
+/* 
+    CSS FOR THE HEADER
+*/
+
+#header {
+    background: linear-gradient(45deg, rgb(46, 108, 149), rgb(75, 165, 201)); /* Dark blue to light blue gradient at a 135 degree angle */
+    color: white;
+    padding: 20px 30px; /*Extra horizontal padding for the left-aligned paragraph */
+    font-family: 'Arial', sans-serif;
+    border-radius: 15px; /* Rounded corners for the header */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add depth with shadow */
+    margin: 20px; /*Space around the header */
+}
+
+/* Center the Main Title */
+#header h1 {
+    color: white; /*explicitly set color here to override header rule later on */
+    font-size: 2.5em; /* Large font size for the title */
+    margin: 20px; /* Remove extra margin */
+    text-align: center; /* Center-align the text */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add subtle text shadow */
+}
+
+/* Left-align the Subtitle */
+#header p {
+    font-size: 1.1em; /* Slightly smaller font size for the subtitle */
+    margin: 10px 0 10; /* Add spacing between the title and the paragraph and the edge of the header box */
+    text-align: left; /* Align the text to the left */
+    font-style: italic; /* Italicize the subtitle for emphasis */
+}
+
+/*
+    CSS FOR MAIN CONTENT
+*/
+
+#main-content {
+    color:rgb(23, 24, 97); /*other text besides headers is this purple color */
+    background-color: white; /* White background for the main content */
+    padding: 20px; /* Add padding to everything on all sides so content is not so close to the border of the div */
+    border-radius: 15px; /* rounded edges */
+    margin: 20px; /* Add space around the main content to align with header*/
+}
+
+/* all headers share same color aside from the title header which we already explicitly assigned color for */
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(0, 93, 136);
+}
+
+/* Headings with Custom Short Underline */
+#intro {
+    text-transform: uppercase; /* Make the text all uppercase */
+    margin-bottom: 20px; /* Add space below the heading */
+    font-size: 1.5em; /* Slightly larger font size for emphasis */
+    position: relative; /* relative positioning to allow for positioning the underline */
+}
+
+/* Underline Effect */
+#intro::after {
+    content: ''; /* Creates the underline */
+    position: absolute; /* Position it relative to the intro heading */
+    bottom: -10px; /* Push it slightly below the text */
+    left: 0; /* Align it to the start of the heading */
+    width: 5%; /* Make the underline shorter than the full text */
+    height: 3px; /* Thickness of the underline */
+    background-color: rgb(173, 226, 229); /* Light blue color for the underline */
+    border-radius: 2px; /* Smooth the edges */
+}
+
+#intro-p {
+    margin: 40px 0 0; /* Add space above and below the paragraph */
+}
+
+#amazing {
+    text-transform: uppercase; /* Make the text all uppercase */
+}
+
+/* Align the two lists */
+ul, ol{
+    /* Add space above and below list, and move over to the left */
+    margin-left: 10px;
+    padding-left: 15px;
+ 
+}
+
+ul li, ol li {
+    margin: 10px 0; /* Add space above and below each list item */
+}
+
+/* Change bullet color on unordered list */
+ul li::marker{
+    color: rgb(0, 170, 209);
+}
+
+.important {
+    color: rgb(0, 97, 139); /* darker blue text color */
+    background-color: rgb(123, 219, 236); /* highlight color */
+    padding: 3px; /*add padding so box around it is bigger */
+    border-radius: 5px; /* rounded corners */
+}
+
+/* Bring "External resources header and the paragraph underneath it closer */
+#main-content h6 {
+    margin: 0px;
+    padding: 0px;
+}
+
+#website-p {
+    margin-top: 5px;
+    padding: 5px 0px;
+}
+
+#website-p a {
+    color: rgb(28, 113, 151);
+}
+
+
+/* 
+
+    STYLING FOR OCTOPUS QUIZ
+*/
+
+#quiz-section {
+    display: grid; /* Enable grid */
+    background-color: rgb(126, 222, 246); /* Background color */
+    padding: 40px; /* Padding around the section */
+    border-radius: 15px; /* Rounded corners */
+    margin: 20px 0; /* Space above and below */
+    gap: 20px; /* Space between items */
+    /*define layout of the grid*/
+    grid-template: "header header form"
+                   "image image form";
+    grid-template-columns: 1fr 1fr 1fr; /* make the form only take up a third of the space */
+}
+
+#quiz-section h2 {
+    grid-area: header; /* Place the header in the header area */
+    text-transform: uppercase;
+    text-align: left; /* Center-align the text */
+}
+
+#quiz-section img {
+    grid-area: image; /* Place the image in the image area */
+    width: 150px;
+    align-self: left;
+    justify-self: left; /* Center the image horizontally */
+    border-color: purple;
+    border-style: solid;
+    border-width: 5px;
+}
+#quiz-sub-form {
+    grid-area: form;
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    gap: 10px; /* Add space between form elements */
+    width: 100%; /* Ensure the form spans the full width of its grid area */
+}
+
+#quiz-sub-form label {
+    font-weight: bold; /* Make the labels bold */
+    color: navy; /* Set the label color to navy */
+    margin-bottom: 5px; /* Add space below labels */
+}
+
+#quiz-sub-form input {
+    padding: 10px; /* Add padding inside the input fields */
+    border: 1px solid #ccc; /* Add a light border */
+    border-radius: 5px; /* Round the corners of the input fields */
+    border-style: solid;
+    border-color: rgb(22, 25, 28);
+    border-width: 1px;
+}
+
+#quiz-sub-form input[type="submit"] {
+    padding: 10px 20px; /* Add padding inside the button */
+    font-size: 16px; /* Increase font size */
+    color: white;
+    background-color: rgb(0, 97, 139); /* Set text color to white */
+    border: none; /* Remove the border */
+    border-radius: 5px; /* Round the corners */
+    text-align: center; /* Center the button text */
+    width: 50%;
+}
+
+/*
+    CSS FOR THE SPECIES TABLE
+*/
+
+#species-table {
+    padding: 8px; /* Add padding around the table */
+    border-radius: 15px; /* Rounded corners */
+    margin: 8px; /* Add space around the table */
+}
+
+#species-table h2 {
+    margin-bottom: 20px; /* Add space below the heading */
+    font-size: 1.3em; /* Slightly larger font size for emphasis */
+    padding-left: 0px;
+    position: relative; /* relative positioning to allow for positioning the underline */
+}
+
+#species-table h2:after {
+    content: ''; /* Creates the underline */
+    position: absolute; /* Position it relative to the intro heading */
+    bottom: -10px; /* Push it slightly below the text */
+    left: 0px; /* Align it to the start of the heading */
+    width: 5%; /* Make the underline shorter than the full text */
+    height: 3px; /* Thickness of the underline */
+    background-color: rgb(173, 226, 229); /* Light blue color for the underline */
+    border-radius: 2px; /* Smooth the edges */
+    padding-left: 10px;
+}
+
+#species-table table{
+    background-color: rgb(209, 239, 247); /* Light blue background */
+    padding: 20px; /* Add padding around the table */
+    border-collapse: collapse; /* Merge borders into a single line */
+    width: 100%; /* Make the table span the full width of its container */
+}
+
+/* Table Header Styling */
+#species-table table th {
+    background-color: rgb(170, 170, 170); /* Gray background for header */
+    color: white; /* White text */
+    text-align: left; /* Align text to the left */
+    border: 1px solid black; /* Black border for header cells */
+    font-weight: bold; /* Make header text bold */
+}
+
+/* Table Data Row Styling */
+#species-table table td {
+    padding: 10px; /* Padding inside data cells */
+    border: 1px solid black; /* Black border for data cells */
+    color: rgb(23, 24, 97); /* Dark text color for data */
+}
+
+/* Alternate Row Background Color */
+#row1 {
+    background-color: rgb(209, 239, 247); /* Light blue background */
+}
+
+#row2 {
+    background-color: white; /*white background */
+}
+
+/* 
+    CSS FOR THE FOOTER
+*/
+
+#footer {
+    color: white;
+    background-color: rgb(0, 97, 139); /* Set text color to white */
+    border-radius: 10px; /* Rounded corners for the footer */
+    font-size: 0.8em; /* Smaller font size for the footer */
+    margin: 15px; /* align with table */
+    padding: 8px; /* make box bigger */
+}
+
+#footer p {
+    padding-top: 3px; /* Add space above the paragraph */
+    padding-bottom: 5px; /* Add space below the paragraph */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
